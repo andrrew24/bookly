@@ -1,5 +1,5 @@
-class AppImage {
-  AppImage._();
+class Assets {
+  Assets._();
   
   /// Assets for imagesLogo
   /// assets/images/Logo.png
