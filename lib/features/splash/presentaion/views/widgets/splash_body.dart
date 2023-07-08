@@ -22,14 +22,10 @@ class _SplashViewBodyState extends State<SplashViewBody>
     super.initState();
     initSlidingAnimation();
 
-    Future.delayed(
-     const  Duration(seconds: 2),
-      () {
-        Get.to(const HomeView(), transition: Transition.fadeIn , duration: const Duration(milliseconds: 250));
-      },
-    );
+    navigaToHome();
   }
 
+ 
   @override
   void dispose() {
     super.dispose();
@@ -60,4 +56,13 @@ class _SplashViewBodyState extends State<SplashViewBody>
 
     animationController.forward();
   }
+   void navigaToHome() {
+    Future.delayed(
+     const  Duration(seconds: 2),
+      () {
+        Get.to(const HomeView(), transition: Transition.fadeIn , duration: const Duration(milliseconds: 250));
+      },
+    );
+  }
+
 }
