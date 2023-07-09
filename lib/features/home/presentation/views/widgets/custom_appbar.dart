@@ -1,0 +1,25 @@
+import 'package:bookly/app_image.dart';
+import 'package:flutter/material.dart';
+import 'package:font_awesome_flutter/font_awesome_flutter.dart';
+
+
+
+class CustomAppBar extends StatelessWidget {
+  const CustomAppBar({super.key});
+
+  @override
+  Widget build(BuildContext context) {
+    return  Padding(
+      padding: const EdgeInsets.symmetric(vertical: 40,horizontal: 10),
+      child: Row(
+        mainAxisAlignment: MainAxisAlignment.spaceBetween,
+        children: [
+          SizedBox(
+            height: 25,
+            child: Image.asset(Assets.imagesLogo)),
+          const IconButton(onPressed: null, icon: Icon(FontAwesomeIcons.magnifyingGlass,size: 25,color: Colors.white,)),
+        ],
+      ),
+    );
+  }
+}
