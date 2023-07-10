@@ -1,8 +1,8 @@
-import 'package:bookly/app_image.dart';
-import 'package:flutter/material.dart';
 
+import 'package:flutter/material.dart';
 import 'custom_appbar.dart';
-import 'feautured_item.dart';
+import 'featured_item_list.dart';
+
 
 class HomeViewWidget extends StatelessWidget {
   const HomeViewWidget({
@@ -13,9 +13,11 @@ class HomeViewWidget extends StatelessWidget {
   Widget build(BuildContext context) {
     return SizedBox(
       width: MediaQuery.sizeOf(context).width,
-      child:const  Column(
-        mainAxisAlignment: MainAxisAlignment.start,
-        children: [  CustomAppBar(),FeauturedItem()]),
+      child: const Column(
+          mainAxisAlignment: MainAxisAlignment.start,
+          children: [CustomAppBar(),
+          FeaturedItemList()
+          ]),
     );
   }
 }
