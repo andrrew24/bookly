@@ -11,13 +11,15 @@ class HomeViewBody extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Column(mainAxisAlignment: MainAxisAlignment.start, children: [
+    return Column(crossAxisAlignment: CrossAxisAlignment.start, children: [
       const CustomAppBar(),
       const FeaturedItemList(),
-      Text(
-        "Best Seller",
-        textAlign: TextAlign.start,
-        style: Styles.titleMedium,
+      Padding(
+        padding: const EdgeInsets.all(8.0),
+        child: Text(
+          "Best Seller",
+          style: Styles.titleMedium,
+        ),
       )
     ]);
   }
