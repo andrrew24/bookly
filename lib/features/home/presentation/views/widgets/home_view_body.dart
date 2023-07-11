@@ -16,13 +16,30 @@ class HomeViewBody extends StatelessWidget {
       const CustomAppBar(),
       const FeaturedItemList(),
       Padding(
-        padding: const EdgeInsets.only(top:20,left: 10),
+        padding: const EdgeInsets.only(top: 20, left: 10,bottom: 10),
         child: Text(
           "Best Seller",
           style: Styles.titleMedium,
         ),
       ),
-      BestSellerItem()
+      
+      BestSellerListView()
+      
     ]);
+  }
+}
+
+class BestSellerListView extends StatelessWidget {
+  const BestSellerListView({super.key});
+
+  @override
+  Widget build(BuildContext context) {
+    return Expanded(
+      child: ListView.builder(
+        itemBuilder: (context, index) {
+          return BestSellerItem();
+        },
+      ),
+    );
   }
 }

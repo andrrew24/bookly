@@ -8,14 +8,14 @@ class BestSellerItem extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return SizedBox(
-      width: MediaQuery.of(context).size.width,
+    return Padding(
+      padding: const EdgeInsets.only(left : 8.0),
       child: Row(
         children: [
           SizedBox(
-          height: MediaQuery.of(context).size.height * .4,
+          height: MediaQuery.of(context).size.height * .2,
           child: AspectRatio(
-            aspectRatio: 1.1/3,
+            aspectRatio: 2.3/4,
             child: Container(
               decoration: const BoxDecoration(
                 borderRadius: BorderRadius.all(Radius.circular(16)),
@@ -29,7 +29,7 @@ class BestSellerItem extends StatelessWidget {
           ),
         ),
        const SizedBox(
-          width: 35,
+          width: 30,
         ),
         Column(
           crossAxisAlignment: CrossAxisAlignment.start,
@@ -61,7 +61,7 @@ class BestSellerItem extends StatelessWidget {
              )
           ],
         )
-    
+      
         ],
       ),
     );
