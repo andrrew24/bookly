@@ -6,10 +6,10 @@ class FeauturedItem extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return SizedBox(
-      height: MediaQuery.of(context).size.height * .3,
-      child: Padding(
-        padding: const EdgeInsets.only(left: 5,right: 5),
+    return Padding(
+      padding: const EdgeInsets.symmetric(horizontal:5),
+      child: SizedBox(
+        height: MediaQuery.of(context).size.height * .3,
         child: AspectRatio(
           aspectRatio: 2.8/4,
           child: Container(
