@@ -1,7 +1,7 @@
 import 'package:bookly/core/utils/app_styles.dart';
-import 'package:bookly/features/home/presentation/views/widgets/best_seller_item.dart';
 import 'package:flutter/material.dart';
 
+import 'best_seller_list.dart';
 import 'custom_appbar.dart';
 import 'featured_item_list.dart';
 
@@ -23,23 +23,10 @@ class HomeViewBody extends StatelessWidget {
         ),
       ),
       
-      BestSellerListView()
+     const BestSellerListView()
       
     ]);
   }
 }
 
-class BestSellerListView extends StatelessWidget {
-  const BestSellerListView({super.key});
 
-  @override
-  Widget build(BuildContext context) {
-    return Expanded(
-      child: ListView.builder(
-        itemBuilder: (context, index) {
-          return BestSellerItem();
-        },
-      ),
-    );
-  }
-}

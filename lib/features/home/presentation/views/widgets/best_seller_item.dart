@@ -1,7 +1,10 @@
+
 import 'package:bookly/core/utils/app_image.dart';
 import 'package:bookly/core/utils/app_styles.dart';
 import 'package:flutter/material.dart';
-import 'package:font_awesome_flutter/font_awesome_flutter.dart';
+
+
+import 'rating_widget.dart';
 
 class BestSellerItem extends StatelessWidget {
   const BestSellerItem({super.key});
@@ -34,7 +37,9 @@ class BestSellerItem extends StatelessWidget {
         Column(
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
-             Text("The Jungel Book" , style: Styles.headLines,),
+             SizedBox(
+              width: MediaQuery.of(context).size.width * 0.5,
+              child: Text("The Jungel Book" , style: Styles.headLines,maxLines: 2,)),
            const  SizedBox(
               height:10 ,
              ),
@@ -44,19 +49,11 @@ class BestSellerItem extends StatelessWidget {
              ),
              Row(
               children: [
-                Text("19.99€",style: Styles.headLines,),
+                Text("19.99€",style: Styles.headLines.copyWith(fontWeight: FontWeight.bold),),
                 const SizedBox(
                   width: 80,
                 ),
-               const Icon(FontAwesomeIcons.solidStar,color: Colors.yellow,size: 20,),
-              const SizedBox(
-                  width: 10,
-                ),
-               Text("4.9",style: Styles.headLines,),
-               const SizedBox(
-                  width: 10,
-                ),
-               Text("(2393)",style: Styles.smallheadLines,),
+               const RatingWidget(),
               ],
              )
           ],
@@ -67,3 +64,4 @@ class BestSellerItem extends StatelessWidget {
     );
   }
 }
+
