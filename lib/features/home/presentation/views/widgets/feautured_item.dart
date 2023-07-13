@@ -9,7 +9,7 @@ class FeauturedItem extends StatelessWidget {
     return Padding(
       padding: const EdgeInsets.symmetric(horizontal:5),
       child: SizedBox(
-        height: MediaQuery.of(context).size.height * .3,
+        height: MediaQuery.of(context).size.height * .4,
         child: AspectRatio(
           aspectRatio: 2.8/4,
           child: Container(
