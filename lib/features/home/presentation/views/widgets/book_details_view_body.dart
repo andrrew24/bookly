@@ -14,55 +14,67 @@ class BookDetailsViewBody extends StatelessWidget {
     var width = MediaQuery.of(context).size.width;
     return SafeArea(
       child: Scaffold(
-        body: Column(
-          crossAxisAlignment: CrossAxisAlignment.center,
-          children: [
-            const Padding(
-              padding: EdgeInsets.symmetric(horizontal: 20),
-              child: CustomAppBarBookDetails(),
-            ),
-            Padding(
-              padding: EdgeInsets.symmetric(horizontal: width * .24),
-              child: const CustomBookImage(),
-            ),
-            const Text(
-              "The Jungle Book",
-              style: Styles.textStyle30,
-            ),
-            const SizedBox(
-              height: 6,
-            ),
-            const Text(
-              "Rudyard kipling",
-              style: Styles.textStyle18,
-            ),
-            const SizedBox(
-              height: 10,
-            ),
-            const RatingWidget(),
-            const SizedBox(
-              height: 20,
-            ),
-            const DetailsPageActionButton(),
-           const SizedBox(
-              height: 
-              30,
-            ),
-           const Padding(
-             padding:  EdgeInsets.only(left:10),
-             child:  Align(
-                alignment: Alignment.centerLeft,
-                child: Text("You may also like",style: Styles.textStyle18,)),
-           ),
-           const SizedBox(
-              height: 
-              10,
-            ),
-           const SimilarBooks()
+        body: CustomScrollView(
+          slivers: [
+            SliverFillRemaining(
+              hasScrollBody: false,
+              child: Column(
+                crossAxisAlignment: CrossAxisAlignment.center,
+                children: [
+                  const Padding(
+                    padding: EdgeInsets.symmetric(horizontal: 20),
+                    child: CustomAppBarBookDetails(),
+                  ),
+                  Padding(
+                    padding: EdgeInsets.symmetric(horizontal: width * .24),
+                    child: const CustomBookImage(),
+                  ),
+                  const Text(
+                    "The Jungle Book",
+                    style: Styles.textStyle30,
+                  ),
+                  const SizedBox(
+                    height: 6,
+                  ),
+                  const Text(
+                    "Rudyard kipling",
+                    style: Styles.textStyle18,
+                  ),
+                  const SizedBox(
+                    height: 10,
+                  ),
+                  const RatingWidget(),
+                  const SizedBox(
+                    height: 20,
+                  ),
+                  const DetailsPageActionButton(),
+                  const Expanded(
+                    child: SizedBox(
+                      height: 30,
+                    ),
+                  ),
+                  const Padding(
+                    padding: EdgeInsets.only(left: 10),
+                    child: Align(
+                        alignment: Alignment.centerLeft,
+                        child: Text(
+                          "You may also like",
+                          style: Styles.textStyle18,
+                        )),
+                  ),
+                  const SizedBox(
+                    height: 10,
+                  ),
+                  const SimilarBooks(),
+                  const SizedBox(
+                    height: 30,
+                  )
+                ],
+              ),
+            )
           ],
         ),
       ),
     );
   }
 }
-
