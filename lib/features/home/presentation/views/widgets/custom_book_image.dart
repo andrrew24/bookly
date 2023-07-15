@@ -9,9 +9,9 @@ class CustomBookImage extends StatelessWidget {
     return Padding(
       padding: const EdgeInsets.symmetric(horizontal: 5),
       child: SizedBox(
-        height: MediaQuery.of(context).size.height * .4,
+        height: MediaQuery.of(context).size.height * .38,
         child: AspectRatio(
-          aspectRatio: 2.8 / 4,
+          aspectRatio: 2.3 / 4,
           child: Container(
             decoration: const BoxDecoration(
                 borderRadius: BorderRadius.all(Radius.circular(16)),

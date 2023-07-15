@@ -86,7 +86,7 @@ flutter_assets:
   fonts:
     - family: GTsectra
       fonts:
-        - asset: assets/fonts/GT_Sectra_Fine_Regular.ttf
+        - asset: assets/fonts/GT Sectra Fine Regular.ttf
   #   - family: Trajan Pro
   #     fonts:
   #       - asset: fonts/TrajanPro.ttf
