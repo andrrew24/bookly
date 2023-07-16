@@ -14,28 +14,28 @@ class BookDetailsSection extends StatelessWidget {
     return Column(
       children: [
         Padding(
-                    padding: EdgeInsets.symmetric(horizontal: width * .24),
-                    child: const CustomBookImage(),
-                  ),
-                  const Text(
-                    "The Jungle Book",
-                    style: Styles.textStyle30,
-                  ),
-                  const SizedBox(
-                    height: 6,
-                  ),
-                  const Text(
-                    "Rudyard kipling",
-                    style: Styles.textStyle18,
-                  ),
-                  const SizedBox(
-                    height: 10,
-                  ),
-                  const RatingWidget(),
-                  const SizedBox(
-                    height: 20,
-                  ),
-                  const DetailsPageActionButton(),
+          padding: EdgeInsets.symmetric(horizontal: width * .24),
+          child: const CustomBookImage(),
+        ),
+        const Text(
+          "The Jungle Book",
+          style: Styles.textStyle30,
+        ),
+        const SizedBox(
+          height: 6,
+        ),
+        const Text(
+          "Rudyard kipling",
+          style: Styles.textStyle18,
+        ),
+        const SizedBox(
+          height: 10,
+        ),
+        const RatingWidget(),
+        const SizedBox(
+          height: 20,
+        ),
+        const DetailsPageActionButton(),
       ],
     );
   }

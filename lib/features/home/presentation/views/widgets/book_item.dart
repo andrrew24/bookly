@@ -21,7 +21,7 @@ class BookItemWidget extends StatelessWidget {
           SizedBox(
             height: MediaQuery.of(context).size.height * .2,
             child: AspectRatio(
-              aspectRatio: 2.4 /4,
+              aspectRatio: 2.4 / 4,
               child: Container(
                 decoration: const BoxDecoration(
                     borderRadius: BorderRadius.all(Radius.circular(16)),
@@ -40,8 +40,7 @@ class BookItemWidget extends StatelessWidget {
                   width: MediaQuery.of(context).size.width * 0.5,
                   child: Text(
                     "The Jungel Book",
-                    style:
-                        Styles.textStyle20.copyWith(fontFamily: kfontFamily),
+                    style: Styles.textStyle20.copyWith(fontFamily: kfontFamily),
                     maxLines: 2,
                   )),
               const SizedBox(

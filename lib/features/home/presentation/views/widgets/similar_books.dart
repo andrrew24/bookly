@@ -2,7 +2,6 @@ import 'package:flutter/material.dart';
 
 import 'custom_book_image.dart';
 
-
 class SimilarBooks extends StatelessWidget {
   const SimilarBooks({super.key});
 

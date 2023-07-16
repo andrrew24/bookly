@@ -8,8 +8,7 @@ class CustomButton extends StatelessWidget {
       required this.text,
       required this.borderRadiusGeometry,
       required this.color,
-      this.textStyle
-      });
+      this.textStyle});
 
   final void Function() onTap;
   final BorderRadiusGeometry borderRadiusGeometry;
