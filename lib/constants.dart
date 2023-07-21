@@ -6,3 +6,6 @@ const kfontFamily = "GTsectra";
 
 const kNewestEndPoint =
     'https://www.googleapis.com/books/v1/volumes?Filtering=free-ebooks&Sorting=newest &q=subject:computer science';
+
+const kFeaturedEndPoint =
+    "https://www.googleapis.com/books/v1/volumes?q=computer science";
