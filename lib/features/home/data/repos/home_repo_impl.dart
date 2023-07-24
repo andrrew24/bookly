@@ -7,7 +7,9 @@ import 'package:dio/dio.dart';
 import 'package:either_dart/src/either.dart';
 
 class HomeRepoImp extends HomeRepo {
-  late ApiService apiService;
+   final ApiService apiService;
+
+  HomeRepoImp(this.apiService);
 
   @override
   Future<Either<Failure, List<BookModel>>> fetchNewestBooks() async {
