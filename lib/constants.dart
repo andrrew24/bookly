@@ -5,7 +5,7 @@ const kprimaryColor = Color(0xff150426);
 const kfontFamily = "GTsectra";
 
 const kNewestEndPoint =
-    'https://www.googleapis.com/books/v1/volumes?Filtering=free-ebooks&Sorting=newest &q=subject:computer science';
+    'volumes?Filtering=free-ebooks&Sorting=newest &q=subject:computer science';
 
 const kFeaturedEndPoint =
-    "https://www.googleapis.com/books/v1/volumes?q=computer science";
+    "volumes?q=computer science";
