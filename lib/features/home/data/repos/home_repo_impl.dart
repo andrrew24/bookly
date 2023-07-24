@@ -6,8 +6,8 @@ import 'package:bookly/features/home/data/repos/home_repo.dart';
 import 'package:dio/dio.dart';
 import 'package:either_dart/src/either.dart';
 
-class HomeRepoImp extends HomeRepo {
-   final ApiService apiService;
+class HomeRepoImp implements HomeRepo {
+  final ApiService apiService;
 
   HomeRepoImp(this.apiService);
 
@@ -17,7 +17,11 @@ class HomeRepoImp extends HomeRepo {
       var data = await apiService.get(endpoint: kNewestEndPoint);
       List<BookModel> books = [];
       for (var item in data['items']) {
-        books.add(item);
+        try {
+          books.add(BookModel.fromJson(item));
+        } catch (e) {
+          books.add(BookModel.fromJson(item));
+        }
       }
       return Right(books);
     } catch (e) {
@@ -30,12 +34,16 @@ class HomeRepoImp extends HomeRepo {
   }
 
   @override
-  Future<Either<Failure, List<BookModel>>> fetchFeaturedBooks() async{
-   try {
+  Future<Either<Failure, List<BookModel>>> fetchFeaturedBooks() async {
+    try {
       var data = await apiService.get(endpoint: kFeaturedEndPoint);
       List<BookModel> books = [];
       for (var item in data['items']) {
-        books.add(item);
+       try {
+          books.add(BookModel.fromJson(item));
+        } catch (e) {
+          books.add(BookModel.fromJson(item));
+        }
       }
       return Right(books);
     } catch (e) {
