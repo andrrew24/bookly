@@ -3,6 +3,7 @@ import 'package:bookly/features/home/data/models/book_model/book_model/book_mode
 import 'package:either_dart/either.dart';
 
 abstract class HomeRepo {
-  Future<Either<Failure, List<BookModel>>> fetchNewestBooks();
+
   Future<Either<Failure, List<BookModel>>> fetchFeaturedBooks();
+  Future<Either<Failure, List<BookModel>>> fetchNewestBooks();
 }

@@ -1,4 +1,3 @@
-import 'package:bookly/core/utils/app_image.dart';
 import 'package:flutter/material.dart';
 
 class CustomBookImage extends StatelessWidget {
@@ -15,10 +14,10 @@ class CustomBookImage extends StatelessWidget {
         child: AspectRatio(
           aspectRatio: 2.3 / 4,
           child: Container(
-            decoration: const BoxDecoration(
-                borderRadius: BorderRadius.all(Radius.circular(16)),
+            decoration:  BoxDecoration(
+                borderRadius:const BorderRadius.all(Radius.circular(16)),
                 image:
-                    DecorationImage(image: AssetImage(Assets.imagesTestImage))),
+                    DecorationImage(image: NetworkImage(imageUrl))),
           ),
         ),
       ),

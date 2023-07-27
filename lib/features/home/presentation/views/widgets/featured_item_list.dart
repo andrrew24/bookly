@@ -1,3 +1,4 @@
+
 import 'package:bookly/core/utils/widgets/custom_circular_indicator.dart';
 import 'package:bookly/core/utils/widgets/custom_error_wid.dart';
 import 'package:bookly/features/home/presentation/view_model/featured_books_cubit/featured_books_cubit.dart';
@@ -17,9 +18,15 @@ class FeaturedItemList extends StatelessWidget {
           return SizedBox(
             height: MediaQuery.of(context).size.height * .3,
             child: ListView.builder(
+              itemCount: state.books.length,
+              physics: const BouncingScrollPhysics(),
               scrollDirection: Axis.horizontal,
               itemBuilder: (context, index) {
-                return const CustomBookImage();
+                return  CustomBookImage(
+                  imageUrl: state.books[index].volumeInfo.imageLinks
+                                ?.thumbnail ??
+                            '',
+                );
               },
             ),
           );

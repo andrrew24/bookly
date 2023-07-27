@@ -1,3 +1,4 @@
+import 'package:bookly/constants.dart';
 import 'package:bookly/core/utils/styles.dart';
 import 'package:flutter/material.dart';
 
@@ -15,7 +16,9 @@ class BookDetailsSection extends StatelessWidget {
       children: [
         Padding(
           padding: EdgeInsets.symmetric(horizontal: width * .24),
-          child: const CustomBookImage(),
+          child: const CustomBookImage(
+            imageUrl: kDefaultImageLink,
+          ),
         ),
         const Text(
           "The Jungle Book",

@@ -1,3 +1,4 @@
+import 'package:bookly/constants.dart';
 import 'package:flutter/material.dart';
 
 import 'custom_book_image.dart';
@@ -12,7 +13,9 @@ class SimilarBooks extends StatelessWidget {
       child: ListView.builder(
         scrollDirection: Axis.horizontal,
         itemBuilder: (context, index) {
-          return const CustomBookImage();
+          return const CustomBookImage(
+            imageUrl: kDefaultImageLink,
+          );
         },
       ),
     );
