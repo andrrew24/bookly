@@ -23,15 +23,7 @@ class NewestBooksListView extends StatelessWidget {
               padding: EdgeInsets.zero,
               itemBuilder: (context, index) {
                 return BookItemWidget(
-                  title: state.books[index].volumeInfo.title ?? "Book",
-                  author: state.books[index].volumeInfo.authors![0],
-                  imageUrl:
-                      state.books[index].volumeInfo.imageLinks!.thumbnail ?? "",
-                  averageRating:
-                      state.books[index].volumeInfo.averageRating?.toDouble() ??
-                          0,
-                  ratingCount:
-                      state.books[index].volumeInfo.ratingsCount?.toInt() ?? 0,
+                  bookModel: state.books[index],
                 );
               },
             ),

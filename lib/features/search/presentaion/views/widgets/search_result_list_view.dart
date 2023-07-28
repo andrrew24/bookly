@@ -1,5 +1,3 @@
-import 'package:bookly/constants.dart';
-import 'package:bookly/features/home/presentation/views/widgets/book_item.dart';
 import 'package:flutter/material.dart';
 
 class SearchResultListView extends StatelessWidget {
@@ -11,13 +9,10 @@ class SearchResultListView extends StatelessWidget {
       physics: const NeverScrollableScrollPhysics(),
       padding: EdgeInsets.zero,
       itemBuilder: (context, index) {
-        return const BookItemWidget(
-          title: "Book",
-          author: "Book",
-          imageUrl: kDefaultImageLink,
-          averageRating: 0,
-          ratingCount: 0,
-        );
+        return Container();
+        // return const BookItemWidget(
+
+        // );
       },
     );
   }

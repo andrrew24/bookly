@@ -2,6 +2,7 @@ import 'package:bookly/constants.dart';
 
 import 'package:bookly/core/utils/app_router.dart';
 import 'package:bookly/core/utils/styles.dart';
+import 'package:bookly/features/home/data/models/book_model/book_model/book_model.dart';
 import 'package:bookly/features/home/presentation/views/widgets/custom_book_image.dart';
 import 'package:flutter/material.dart';
 import 'package:go_router/go_router.dart';
@@ -9,23 +10,17 @@ import 'package:go_router/go_router.dart';
 import 'rating_widget.dart';
 
 class BookItemWidget extends StatelessWidget {
-  const BookItemWidget(
-      {super.key,
-      required this.title,
-      required this.author,
-      required this.imageUrl, required this.averageRating, required this.ratingCount});
+  const BookItemWidget({
+    super.key, required this.bookModel,
+  });
 
-  final String title;
-  final String author;
-  final String imageUrl;
-  final double averageRating;
-  final int ratingCount;
+  final BookModel bookModel;
 
   @override
   Widget build(BuildContext context) {
     return GestureDetector(
       onTap: () {
-        GoRouter.of(context).push(AppRouter.kBookDetailsView);
+        GoRouter.of(context).push(AppRouter.kBookDetailsView,);
       },
       child: Row(
         children: [
@@ -33,7 +28,7 @@ class BookItemWidget extends StatelessWidget {
             height: MediaQuery.of(context).size.height * .2,
             child: AspectRatio(
                 aspectRatio: 2.4 / 4,
-                child: CustomBookImage(imageUrl: imageUrl)),
+                child: CustomBookImage(imageUrl: bookModel.volumeInfo.imageLinks!.thumbnail ?? "" )),
           ),
           const SizedBox(
             width: 20,
@@ -44,7 +39,7 @@ class BookItemWidget extends StatelessWidget {
               SizedBox(
                   width: MediaQuery.of(context).size.width * 0.5,
                   child: Text(
-                    title,
+                    bookModel.volumeInfo.title ?? "Book",
                     style: Styles.textStyle20.copyWith(fontFamily: kfontFamily),
                     maxLines: 2,
                   )),
@@ -54,7 +49,7 @@ class BookItemWidget extends StatelessWidget {
               SizedBox(
                 width: MediaQuery.of(context).size.width * 0.5,
                 child: Text(
-                  author,
+                  bookModel.volumeInfo.authors![0],
                   style: Styles.textStyle16,
                   maxLines: 2,
                   overflow: TextOverflow.ellipsis,
@@ -75,8 +70,9 @@ class BookItemWidget extends StatelessWidget {
                     width: 80,
                   ),
                   RatingWidget(
-                    averageRating: averageRating,
-                    ratingCount: ratingCount,
+                    averageRating: bookModel.volumeInfo.averageRating?.toDouble() ??
+                          0,
+                    ratingCount: bookModel.volumeInfo.ratingsCount?.toInt() ?? 0,
                   ),
                 ],
               )
