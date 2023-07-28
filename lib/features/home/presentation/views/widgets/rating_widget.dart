@@ -4,8 +4,10 @@ import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 
 class RatingWidget extends StatelessWidget {
   const RatingWidget({
-    super.key,
+    super.key, required this.averageRating, required this.ratingCount,
   });
+  final double averageRating;
+  final int ratingCount;
 
   @override
   Widget build(BuildContext context) {
@@ -22,14 +24,14 @@ class RatingWidget extends StatelessWidget {
             width: 10,
           ),
           Text(
-            "4.9",
+            averageRating.toString(),
             style: Styles.textStyle20.copyWith(fontWeight: FontWeight.bold),
           ),
           const SizedBox(
             width: 5,
           ),
           Text(
-            "(2393)",
+            "( ${ratingCount.toString()} )",
             style: Styles.textStyle14.copyWith(color: Colors.grey),
           )
         ],

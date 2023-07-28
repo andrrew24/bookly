@@ -15,6 +15,8 @@ class SearchResultListView extends StatelessWidget {
           title: "Book",
           author: "Book",
           imageUrl: kDefaultImageLink,
+          averageRating: 0,
+          ratingCount: 0,
         );
       },
     );

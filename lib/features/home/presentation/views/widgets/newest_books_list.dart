@@ -13,18 +13,23 @@ class NewestBooksListView extends StatelessWidget {
     return BlocBuilder<NewestBooksCubit, NewestBooksState>(
       builder: (context, state) {
         if (state is NewestBooksSuccess) {
-          return ListView.builder(
-            itemCount: state.books.length,
-            physics: const NeverScrollableScrollPhysics(),
-            padding: EdgeInsets.zero,
-            itemBuilder: (context, index) {
-              return BookItemWidget(
-                title: state.books[index].volumeInfo.title ?? "Book",
-                author: state.books[index].volumeInfo.authors![0],
-                imageUrl:
-                    state.books[index].volumeInfo.imageLinks!.thumbnail ?? "",
-              );
-            },
+          return Padding(
+            padding: const EdgeInsets.symmetric(horizontal: 10),
+            child: ListView.builder(
+              itemCount: state.books.length,
+              physics: const NeverScrollableScrollPhysics(),
+              padding: EdgeInsets.zero,
+              itemBuilder: (context, index) {
+                return BookItemWidget(
+                  title: state.books[index].volumeInfo.title ?? "Book",
+                  author: state.books[index].volumeInfo.authors![0],
+                  imageUrl:
+                      state.books[index].volumeInfo.imageLinks!.thumbnail ?? "",
+                  averageRating: state.books[index].volumeInfo.averageRating?.toDouble() ?? 0 ,
+                  ratingCount: state.books[index].volumeInfo.ratingsCount?.toInt() ?? 0  ,
+                );
+              },
+            ),
           );
         } else if (state is NewestBooksFailed) {
           return CustomErrorWid(text: state.errorName);

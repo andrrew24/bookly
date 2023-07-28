@@ -21,7 +21,7 @@ class HomeViewBody extends StatelessWidget {
             CustomAppBar(),
             FeaturedItemList(),
             Padding(
-              padding: EdgeInsets.only(top: 20, left: 10, bottom: 10),
+              padding: EdgeInsets.only(top: 10, left: 10),
               child: Text(
                 "Newest Books",
                 style: Styles.textStyle20,
@@ -31,7 +31,7 @@ class HomeViewBody extends StatelessWidget {
         ),
         SliverFillRemaining(
           child: Padding(
-            padding: EdgeInsets.symmetric(horizontal: 8.0),
+            padding: EdgeInsets.symmetric(horizontal:10),
             child: NewestBooksListView(),
           ),
         )

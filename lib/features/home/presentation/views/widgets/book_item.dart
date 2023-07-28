@@ -13,11 +13,13 @@ class BookItemWidget extends StatelessWidget {
       {super.key,
       required this.title,
       required this.author,
-      required this.imageUrl});
+      required this.imageUrl, required this.averageRating, required this.ratingCount});
 
   final String title;
   final String author;
   final String imageUrl;
+  final double averageRating;
+  final int ratingCount;
 
   @override
   Widget build(BuildContext context) {
@@ -72,7 +74,10 @@ class BookItemWidget extends StatelessWidget {
                   const SizedBox(
                     width: 80,
                   ),
-                  const RatingWidget(),
+                  RatingWidget(
+                    averageRating: averageRating,
+                    ratingCount: ratingCount,
+                  ),
                 ],
               )
             ],
