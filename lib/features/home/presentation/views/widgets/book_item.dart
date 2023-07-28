@@ -1,14 +1,23 @@
 import 'package:bookly/constants.dart';
-import 'package:bookly/core/utils/app_image.dart';
+
 import 'package:bookly/core/utils/app_router.dart';
 import 'package:bookly/core/utils/styles.dart';
+import 'package:bookly/features/home/presentation/views/widgets/custom_book_image.dart';
 import 'package:flutter/material.dart';
 import 'package:go_router/go_router.dart';
 
 import 'rating_widget.dart';
 
 class BookItemWidget extends StatelessWidget {
-  const BookItemWidget({super.key});
+  const BookItemWidget(
+      {super.key,
+      required this.title,
+      required this.author,
+      required this.imageUrl});
+
+  final String title;
+  final String author;
+  final String imageUrl;
 
   @override
   Widget build(BuildContext context) {
@@ -21,17 +30,11 @@ class BookItemWidget extends StatelessWidget {
           SizedBox(
             height: MediaQuery.of(context).size.height * .2,
             child: AspectRatio(
-              aspectRatio: 2.4 / 4,
-              child: Container(
-                decoration: const BoxDecoration(
-                    borderRadius: BorderRadius.all(Radius.circular(16)),
-                    image: DecorationImage(
-                        image: AssetImage(Assets.imagesTestImage))),
-              ),
-            ),
+                aspectRatio: 2.4 / 4,
+                child: CustomBookImage(imageUrl: imageUrl)),
           ),
           const SizedBox(
-            width: 30,
+            width: 20,
           ),
           Column(
             crossAxisAlignment: CrossAxisAlignment.start,
@@ -39,16 +42,22 @@ class BookItemWidget extends StatelessWidget {
               SizedBox(
                   width: MediaQuery.of(context).size.width * 0.5,
                   child: Text(
-                    "The Jungel Book",
+                    title,
                     style: Styles.textStyle20.copyWith(fontFamily: kfontFamily),
                     maxLines: 2,
                   )),
               const SizedBox(
                 height: 10,
               ),
-              const Text(
-                "Budyard kipling",
-                style: Styles.textStyle16,
+              SizedBox(
+                width: MediaQuery.of(context).size.width * 0.5,
+                child: Text(
+                  author,
+                  style: Styles.textStyle16,
+                  maxLines: 2,
+                  overflow: TextOverflow.ellipsis,
+                  softWrap: true,
+                ),
               ),
               const SizedBox(
                 height: 10,
@@ -56,7 +65,7 @@ class BookItemWidget extends StatelessWidget {
               Row(
                 children: [
                   Text(
-                    "19.99€",
+                    "Free",
                     style: Styles.textStyle20
                         .copyWith(fontWeight: FontWeight.bold),
                   ),
