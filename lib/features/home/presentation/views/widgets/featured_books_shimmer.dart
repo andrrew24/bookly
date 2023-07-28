@@ -12,21 +12,14 @@ class FeaturedBooksListShimmer extends StatelessWidget {
       padding: const EdgeInsets.all(8.0),
       child: SizedBox(
         height: MediaQuery.of(context).size.height * .28,
-        child: ListView(
-          physics: const BouncingScrollPhysics(),
+        child: ListView.builder(
           scrollDirection: Axis.horizontal,
-          children: [
-            ShimmerWidget.rectangular(height: 100, width: 150,shapeBorder: RoundedRectangleBorder(borderRadius: BorderRadius.circular(16)),),
-           const SizedBox(
-              width: 10,
-            ),
-            ShimmerWidget.rectangular(height: 100, width: 150,shapeBorder: RoundedRectangleBorder(borderRadius: BorderRadius.circular(16)),),
-           const   SizedBox(
-              width: 10,
-            ),
-            ShimmerWidget.rectangular(height: 100, width: 150,shapeBorder: RoundedRectangleBorder(borderRadius: BorderRadius.circular(16)),),
-          ],
-        ),
+          physics: const BouncingScrollPhysics(),
+          itemCount: 5,
+          itemBuilder: (context, index) => Padding(
+            padding: const EdgeInsets.symmetric(horizontal: 5),
+            child: ShimmerWidget.rectangular(height: 100, width: 150,shapeBorder: RoundedRectangleBorder(borderRadius: BorderRadius.circular(16)),),
+          ),)
       ),
     );
   }
