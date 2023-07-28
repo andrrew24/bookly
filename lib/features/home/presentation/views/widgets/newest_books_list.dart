@@ -14,7 +14,7 @@ class NewestBooksListView extends StatelessWidget {
       builder: (context, state) {
         if (state is NewestBooksSuccess) {
           return Padding(
-            padding: const EdgeInsets.symmetric(horizontal: 10),
+            padding: const EdgeInsets.symmetric(horizontal: 5),
             child: ListView.builder(
               itemCount: state.books.length,
               physics: const NeverScrollableScrollPhysics(),
