@@ -13,7 +13,7 @@ class FeaturedBooksListShimmer extends StatelessWidget {
       child: SizedBox(
         height: MediaQuery.of(context).size.height * .28,
         child: ListView(
-          physics: const NeverScrollableScrollPhysics(),
+          physics: const BouncingScrollPhysics(),
           scrollDirection: Axis.horizontal,
           children: [
             ShimmerWidget.rectangular(height: 100, width: 150,shapeBorder: RoundedRectangleBorder(borderRadius: BorderRadius.circular(16)),),

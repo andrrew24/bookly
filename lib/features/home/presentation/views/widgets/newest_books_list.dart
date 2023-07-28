@@ -4,6 +4,8 @@ import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 
 import 'book_item.dart';
+import 'newest_books_list_shimmmer.dart';
+
 
 class NewestBooksListView extends StatelessWidget {
   const NewestBooksListView({super.key});
@@ -25,8 +27,11 @@ class NewestBooksListView extends StatelessWidget {
                   author: state.books[index].volumeInfo.authors![0],
                   imageUrl:
                       state.books[index].volumeInfo.imageLinks!.thumbnail ?? "",
-                  averageRating: state.books[index].volumeInfo.averageRating?.toDouble() ?? 0 ,
-                  ratingCount: state.books[index].volumeInfo.ratingsCount?.toInt() ?? 0  ,
+                  averageRating:
+                      state.books[index].volumeInfo.averageRating?.toDouble() ??
+                          0,
+                  ratingCount:
+                      state.books[index].volumeInfo.ratingsCount?.toInt() ?? 0,
                 );
               },
             ),
@@ -35,10 +40,11 @@ class NewestBooksListView extends StatelessWidget {
           return CustomErrorWid(text: state.errorName);
         } else {
           return const Center(
-            child: CircularProgressIndicator(),
+            child: NewestBooksListShimmer(),
           );
         }
       },
     );
   }
 }
+
