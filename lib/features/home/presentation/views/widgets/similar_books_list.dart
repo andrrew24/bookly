@@ -1,3 +1,4 @@
+import 'package:bookly/constants.dart';
 import 'package:bookly/core/utils/widgets/custom_error_wid.dart';
 import 'package:bookly/features/home/presentation/view_model/similar_books_cubit/similar_books_cubit.dart';
 import 'package:flutter/material.dart';
@@ -25,7 +26,7 @@ class SimilarBooksList extends StatelessWidget {
               itemCount: state.books.length,
               itemBuilder: (context, index) {
                 return  CustomBookImage(
-                  imageUrl: state.books[index].volumeInfo.imageLinks!.thumbnail ?? "",
+                  imageUrl: state.books[index].volumeInfo.imageLinks?.thumbnail ?? kDefaultImageLink,
                 );
               },
             ),
