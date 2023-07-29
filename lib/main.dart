@@ -8,8 +8,11 @@ import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:google_fonts/google_fonts.dart';
 
+import 'features/home/presentation/view_model/simble_bloc_observer.dart';
+
 void main() {
   serviceLocatorSetup();
+  Bloc.observer = SimpleBlocObserver();
   runApp(const BooklyApp());
 }
 

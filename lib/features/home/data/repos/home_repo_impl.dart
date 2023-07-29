@@ -63,7 +63,7 @@ class HomeRepoImp implements HomeRepo {
     try {
       var data = await apiService.get(
           endpoint:
-              "https://www.googleapis.com/books/v1/volumes?Filtering=free-ebooks&Sorting=relevance&q=$category");
+              "volumes?Filtering=free-ebooks&Sorting=newest &q=Programming");
       List<BookModel> books = [];
       for (var item in data['items']) {
         try {
@@ -72,6 +72,7 @@ class HomeRepoImp implements HomeRepo {
           books.add(BookModel.fromJson(item));
         }
       }
+      print("fetch Similar Books trig");
       return Right(books);
     } catch (e) {
       if (e is DioException) {
