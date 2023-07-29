@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 
-const kprimaryColor = Color(0xff150426);
+const kprimaryColor = Color.fromARGB(255, 0, 0, 0);
 
 const kfontFamily = "GTsectra";
 
