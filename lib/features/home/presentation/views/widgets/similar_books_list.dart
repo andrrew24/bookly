@@ -3,9 +3,10 @@ import 'package:bookly/core/utils/widgets/custom_error_wid.dart';
 import 'package:bookly/features/home/presentation/view_model/similar_books_cubit/similar_books_cubit.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
-import 'package:loading_indicator/loading_indicator.dart';
+
 
 import 'custom_book_image.dart';
+import 'similar_books_list_shimmer.dart';
 
 class SimilarBooksList extends StatelessWidget {
   const SimilarBooksList({super.key});
@@ -34,9 +35,10 @@ class SimilarBooksList extends StatelessWidget {
         } else if (state is SimilarBooksFailed) {
           return CustomErrorWid(text: state.errName);
         } else {
-          return const LoadingIndicator(indicatorType: Indicator.ballBeat);
+          return const SimilarBooksListShimmer();
         }
       },
     );
   }
 }
+
