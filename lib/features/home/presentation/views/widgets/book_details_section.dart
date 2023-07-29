@@ -14,32 +14,34 @@ class BookDetailsSection extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    var width = MediaQuery.of(context).size.width;
+    var width = MediaQuery.sizeOf(context);
     return Column(
       children: [
         Padding(
-          padding: EdgeInsets.symmetric(horizontal: width * .24),
-          child: const CustomBookImage(
-            imageUrl: kDefaultImageLink,
+          padding: EdgeInsets.symmetric(horizontal: width.width * .24),
+          child: CustomBookImage(
+            imageUrl:
+                bookModel.volumeInfo.imageLinks?.thumbnail ?? kDefaultImageLink,
           ),
         ),
-        const Text(
-          "The Jungle Book",
+        Text(
+          bookModel.volumeInfo.title!,
           style: Styles.textStyle30,
+          textAlign: TextAlign.center,
         ),
         const SizedBox(
           height: 6,
         ),
-        const Text(
-          "Rudyard kipling",
+        Text(
+          bookModel.volumeInfo.categories![0],
           style: Styles.textStyle18,
         ),
         const SizedBox(
           height: 10,
         ),
-        const RatingWidget(
-          averageRating: 0,
-          ratingCount: 0,
+        RatingWidget(
+          averageRating: bookModel.volumeInfo.averageRating?.toDouble() ?? 0,
+          ratingCount: bookModel.volumeInfo.ratingsCount?.toInt() ?? 0,
         ),
         const SizedBox(
           height: 20,

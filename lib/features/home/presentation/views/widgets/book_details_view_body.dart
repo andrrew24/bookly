@@ -14,6 +14,7 @@ class BookDetailsViewBody extends StatelessWidget {
     return  SafeArea(
       child: Scaffold(
         body: CustomScrollView(
+          physics: const BouncingScrollPhysics(),
           slivers: [
             SliverFillRemaining(
               hasScrollBody: false,
