@@ -1,4 +1,4 @@
-import 'package:bookly/constants.dart';
+import 'package:bookly/core/utils/constants.dart';
 
 import 'package:bookly/core/utils/app_router.dart';
 import 'package:bookly/core/utils/styles.dart';
@@ -24,11 +24,14 @@ class BookItemWidget extends StatelessWidget {
       },
       child: Row(
         children: [
-          SizedBox(
-            height: MediaQuery.of(context).size.height * .2,
-            child: AspectRatio(
-                aspectRatio: 2.4 / 4,
-                child: CustomBookImage(imageUrl: bookModel.volumeInfo.imageLinks!.thumbnail ?? "" )),
+          Padding(
+            padding: const EdgeInsets.only(bottom:8.0),
+            child: SizedBox(
+              height: MediaQuery.of(context).size.height * .2,
+              child: AspectRatio(
+                  aspectRatio: 2.4 / 4,
+                  child: CustomBookImage(imageUrl: bookModel.volumeInfo.imageLinks!.thumbnail ?? "" )),
+            ),
           ),
           const SizedBox(
             width: 20,
