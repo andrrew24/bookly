@@ -3,5 +3,6 @@ import 'package:bookly/core/errors/failure.dart';
 import 'package:either_dart/either.dart';
 
 abstract class SearchRepo {
-  Future<Either<Failure, List<BookModel>>> fetchSearchedBook({String bookName});
+  Future<Either<Failure, List<BookModel>>> fetchSearchedBook(
+      {required String bookName});
 }
