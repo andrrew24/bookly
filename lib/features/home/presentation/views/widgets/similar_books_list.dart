@@ -1,12 +1,12 @@
 import 'package:bookly/core/utils/constants.dart';
 import 'package:bookly/core/utils/app_router.dart';
 import 'package:bookly/core/utils/widgets/custom_error_wid.dart';
-import 'package:bookly/features/home/presentation/view_model/similar_books_cubit/similar_books_cubit.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:go_router/go_router.dart';
 
 
+import '../../manager/similar_books_cubit/similar_books_cubit.dart';
 import 'custom_book_image.dart';
 import 'similar_books_list_shimmer.dart';
 

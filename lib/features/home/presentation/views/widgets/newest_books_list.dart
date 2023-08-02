@@ -1,8 +1,8 @@
 import 'package:bookly/core/utils/widgets/custom_error_wid.dart';
-import 'package:bookly/features/home/presentation/view_model/newest_books_cubit/newest_books_cubit.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 
+import '../../manager/newest_books_cubit/newest_books_cubit.dart';
 import 'book_item.dart';
 import 'newest_books_list_shimmmer.dart';
 
