@@ -8,3 +8,17 @@ abstract class SearchState extends Equatable {
 }
 
 class SearchInitial extends SearchState {}
+
+class SearchLoading extends SearchState {}
+
+class SearchSuccess extends SearchState {
+  final List<BookModel> books;
+
+  const SearchSuccess(this.books);
+}
+
+class SearchFailed extends SearchState {
+  final String errName;
+
+ const SearchFailed(this.errName);
+}
