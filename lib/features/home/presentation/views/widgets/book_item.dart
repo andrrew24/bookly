@@ -30,7 +30,7 @@ class BookItemWidget extends StatelessWidget {
               height: MediaQuery.of(context).size.height * .2,
               child: AspectRatio(
                   aspectRatio: 2.4 / 4,
-                  child: CustomBookImage(imageUrl: bookModel.volumeInfo.imageLinks!.thumbnail ?? "" )),
+                  child: CustomBookImage(imageUrl: bookModel.volumeInfo.imageLinks?.thumbnail ?? "" )),
             ),
           ),
           const SizedBox(
