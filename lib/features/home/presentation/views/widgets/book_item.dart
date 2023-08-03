@@ -52,7 +52,7 @@ class BookItemWidget extends StatelessWidget {
               SizedBox(
                 width: MediaQuery.of(context).size.width * 0.5,
                 child: Text(
-                  bookModel.volumeInfo.authors![0],
+                  bookModel.volumeInfo.authors == null ? "" :bookModel.volumeInfo.authors![0] ,
                   style: Styles.textStyle16,
                   maxLines: 2,
                   overflow: TextOverflow.ellipsis,

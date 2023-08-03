@@ -4,7 +4,6 @@ import 'package:bookly/core/utils/widgets/custom_button.dart';
 import 'package:bookly/core/book_model/book_model.dart';
 import 'package:flutter/material.dart';
 
-
 class DetailsPageActionButton extends StatelessWidget {
   const DetailsPageActionButton({
     super.key,
@@ -30,7 +29,8 @@ class DetailsPageActionButton extends StatelessWidget {
         ),
         CustomButton(
           onTap: () {
-            launchTheUrl(context, bookModel.volumeInfo.previewLink!);
+            print("aaaaaaaa");
+            launchTheUrl(context, bookModel.volumeInfo.previewLink);
           },
           text: getText(bookModel),
           borderRadiusGeometry: const BorderRadius.only(
