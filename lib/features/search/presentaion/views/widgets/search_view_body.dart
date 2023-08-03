@@ -1,14 +1,14 @@
 import 'package:bookly/core/utils/styles.dart';
-import 'package:bookly/features/search/presentaion/views/widgets/custom_textfield.dart';
 import 'package:flutter/material.dart';
 import 'search_result_list_view.dart';
+import 'search_section.dart';
 
 class SearchViewBody extends StatelessWidget {
   const SearchViewBody({super.key});
 
   @override
   Widget build(BuildContext context) {
-    return const Padding(
+    return const  Padding(
         padding: EdgeInsets.symmetric(horizontal: 7, vertical: 15),
         child: CustomScrollView(
           slivers: [
@@ -16,7 +16,9 @@ class SearchViewBody extends StatelessWidget {
               child: Column(
                 crossAxisAlignment: CrossAxisAlignment.start,
                 children: [
-                  SearchSection(),
+                  SearchSection(
+                    
+                  ),
                   SizedBox(
                     height: 20,
                   ),
@@ -38,13 +40,4 @@ class SearchViewBody extends StatelessWidget {
   }
 }
 
-class SearchSection extends StatelessWidget {
-  const SearchSection({
-    super.key,
-  });
 
-  @override
-  Widget build(BuildContext context) {
-    return const CustomTextField(hintText: "Search");
-  }
-}

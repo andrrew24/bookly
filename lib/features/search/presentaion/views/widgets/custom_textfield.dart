@@ -33,6 +33,7 @@ class CustomTextField extends StatelessWidget {
       onTapOutside: (event) {
         FocusManager.instance.primaryFocus!.unfocus();
       },
+      
       textInputAction: TextInputAction.next,
       onSaved: onSaved,
       onChanged: onChanged,
