@@ -33,7 +33,7 @@ class BookDetailsSection extends StatelessWidget {
           height: 6,
         ),
         Text(
-          bookModel.volumeInfo.categories![0],
+          bookModel.volumeInfo.categories == null ? "": bookModel.volumeInfo.categories![0],
           style: Styles.textStyle18,
         ),
         const SizedBox(
