@@ -41,7 +41,7 @@ class ServerFailure extends Failure {
     } else if (statusCode == 500) {
       return ServerFailure(errorName: "Server is Broke, try again later");
     } else {
-      return ServerFailure(errorName: "Oops there was an error");
+      return ServerFailure(errorName: "Oops there was an error $reponse");
     }
   }
 }

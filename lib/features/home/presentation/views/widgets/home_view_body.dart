@@ -17,17 +17,20 @@ class HomeViewBody extends StatelessWidget {
       slivers: [
         SliverToBoxAdapter(
           child:
-              Column(crossAxisAlignment: CrossAxisAlignment.start, children: [
-            CustomAppBar(),
-            FeaturedItemList(),
-            Padding(
-              padding: EdgeInsets.only(top: 10, left: 22,bottom: 10),
-              child: Text(
-                "Newest Books",
-                style: Styles.textStyle20,
+              Padding(  
+                padding: EdgeInsets.all(8.0),
+                child: Column(crossAxisAlignment: CrossAxisAlignment.start, children: [
+                          CustomAppBar(),
+                          FeaturedItemList(),
+                          Padding(
+                padding: EdgeInsets.only(top: 10, left: 22,bottom: 10),
+                child: Text(
+                  "Newest Books",
+                  style: Styles.textStyle20,
+                ),
+                          ),
+                        ]),
               ),
-            ),
-          ]),
         ),
         SliverFillRemaining(
           child: Padding(
