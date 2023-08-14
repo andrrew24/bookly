@@ -8,7 +8,6 @@ import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 
-import '../../../../home/presentation/views/widgets/newest_books_list_shimmmer.dart';
 
 class SearchResultListView extends StatelessWidget {
   const SearchResultListView({super.key});
@@ -30,20 +29,31 @@ class SearchResultListView extends StatelessWidget {
           );
         } else if (state is SearchLoading) {
           return const SliverFillRemaining(
-            child: NewestBooksListShimmer(),
+            child:   Center(
+            child: SizedBox(
+              height: 50,
+              width: 50,
+              child: CircularProgressIndicator(),
+            ),
+          )
           );
         } else {
-        return const SliverToBoxAdapter(
+        return  SliverToBoxAdapter(
             child:  Center(
               child: Column(
             mainAxisAlignment: MainAxisAlignment.center,
+
             children: [
-              Icon(FontAwesomeIcons.magnifyingGlass),
               SizedBox(
+                height: MediaQuery.sizeOf(context).height *0.3,
+              ),
+              const Icon(FontAwesomeIcons.magnifyingGlass),
+              const SizedBox(
                 height: 25,
               ),
-              Text(
+              const Text(
                 "Search for a book to show result",
+                textAlign: TextAlign.center,
                 style: Styles.textStyle18,
               ),
             ],
@@ -57,29 +67,3 @@ class SearchResultListView extends StatelessWidget {
 
 
 
-// else if (state is SearchFailed) {
-//           return CustomErrorWid(text: state.errName);
-//         } else if (state is SearchLoading) {
-//           return const Center(
-//             child: SizedBox(
-//               height: 50,
-//               width: 50,
-//               child: CircularProgressIndicator(),
-//             ),
-//           );
-//         } else {
-//           return const Center(
-//               child: Column(
-//             mainAxisAlignment: MainAxisAlignment.center,
-//             children: [
-//               Icon(FontAwesomeIcons.magnifyingGlass),
-//               SizedBox(
-//                 height: 25,
-//               ),
-//               Text(
-//                 "Search for a book to show result",
-//                 style: Styles.textStyle18,
-//               ),
-//             ],
-//           ));
-//         }

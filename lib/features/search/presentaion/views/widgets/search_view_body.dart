@@ -9,7 +9,7 @@ class SearchViewBody extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return const Padding(
-        padding: EdgeInsets.symmetric(horizontal: 7, vertical: 15),
+        padding: EdgeInsets.symmetric(horizontal: 15, vertical: 15),
         child: CustomScrollView(
           slivers: [
             SliverToBoxAdapter(
