@@ -30,9 +30,7 @@ class SearchViewBody extends StatelessWidget {
                 ],
               ),
             ),
-            SliverFillRemaining(
-              child: SearchResultListView(),
-            )
+            SearchResultListView()
           ],
         ));
   }

@@ -29,10 +29,13 @@ class FeaturedItemList extends StatelessWidget {
                   onTap: () {
                     GoRouter.of(context).push(AppRouter.kBookDetailsView,extra:state.books[index]);
                   },
-                  child: CustomBookImage(
-                    imageUrl: state.books[index].volumeInfo.imageLinks
-                                  ?.thumbnail ??
-                              '',
+                  child: Padding(
+                    padding: const EdgeInsets.all(5),
+                    child: CustomBookImage(
+                      imageUrl: state.books[index].volumeInfo.imageLinks
+                                    ?.thumbnail ??
+                                '',
+                    ),
                   ),
                 );
               },
