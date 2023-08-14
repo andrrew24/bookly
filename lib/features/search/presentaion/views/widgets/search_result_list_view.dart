@@ -1,8 +1,10 @@
+import 'package:bookly/core/utils/styles.dart';
 import 'package:bookly/core/utils/widgets/custom_error_wid.dart';
 import 'package:bookly/features/home/presentation/views/widgets/book_item.dart';
 import 'package:bookly/features/search/presentaion/manager/search_cubit/search_cubit.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 
 class SearchResultListView extends StatelessWidget {
   const SearchResultListView({super.key});
@@ -31,7 +33,16 @@ class SearchResultListView extends StatelessWidget {
             ),
           );
         } else {
-          return const Center(child: Text("Search for a book to show result"));
+          return const Center(child: Column(
+            mainAxisAlignment: MainAxisAlignment.center,
+            children: [
+              Icon(FontAwesomeIcons.magnifyingGlass),
+              SizedBox(
+                height: 25,
+              ),
+              Text("Search for a book to show result",style: Styles.textStyle18,),
+            ],
+          ));
         }
       },
     );

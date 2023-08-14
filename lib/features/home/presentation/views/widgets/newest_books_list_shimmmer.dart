@@ -11,7 +11,10 @@ class NewestBooksListShimmer extends StatelessWidget {
       physics: const BouncingScrollPhysics(),
       itemCount: 5,
       itemBuilder: (context, index) {
-        return const NewestBookShimmerItem();
+        return const Padding(
+          padding:  EdgeInsets.only(bottom:13),
+          child:  NewestBookShimmerItem(),
+        );
       },
     );
   }

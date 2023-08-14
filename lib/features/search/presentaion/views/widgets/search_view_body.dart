@@ -8,7 +8,7 @@ class SearchViewBody extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return const  Padding(
+    return const Padding(
         padding: EdgeInsets.symmetric(horizontal: 7, vertical: 15),
         child: CustomScrollView(
           slivers: [
@@ -16,9 +16,7 @@ class SearchViewBody extends StatelessWidget {
               child: Column(
                 crossAxisAlignment: CrossAxisAlignment.start,
                 children: [
-                  SearchSection(
-                    
-                  ),
+                  SearchSection(),
                   SizedBox(
                     height: 20,
                   ),
@@ -39,5 +37,3 @@ class SearchViewBody extends StatelessWidget {
         ));
   }
 }
-
-
