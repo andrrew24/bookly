@@ -18,7 +18,7 @@ class FeaturedBooksListShimmer extends StatelessWidget {
           itemCount: 5,
           itemBuilder: (context, index) => Padding(
             padding: const EdgeInsets.symmetric(horizontal: 5),
-            child: ShimmerWidget.rectangular(height: 100, width: 150,shapeBorder: RoundedRectangleBorder(borderRadius: BorderRadius.circular(16)),),
+            child: ShimmerWidget.rectangular(height: 150, width: 150,shapeBorder: RoundedRectangleBorder(borderRadius: BorderRadius.circular(16)),),
           ),)
       ),
     );

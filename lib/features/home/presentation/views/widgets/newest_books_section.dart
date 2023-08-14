@@ -19,7 +19,10 @@ class NewestBooksSection extends StatelessWidget {
               delegate: SliverChildBuilderDelegate(
             childCount: state.books.length,
             (context, index) {
-              return BookItemWidget(bookModel: state.books[index]);
+              return Padding(
+                padding: const EdgeInsets.only(left: 15),
+                child: BookItemWidget(bookModel: state.books[index]),
+              );
             },
           ));
         } else if (state is NewestBooksFailed) {

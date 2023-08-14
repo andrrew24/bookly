@@ -3,9 +3,6 @@ import 'package:bookly/features/home/presentation/views/widgets/newest_books_sec
 import 'package:flutter/material.dart';
 
 import 'featured_books_section.dart';
-import 'newest_books_list.dart';
-import 'custom_appbar.dart';
-import 'featured_item_list.dart';
 
 class HomeViewBody extends StatelessWidget {
   const HomeViewBody({
@@ -18,6 +15,12 @@ class HomeViewBody extends StatelessWidget {
       physics: BouncingScrollPhysics(),
       slivers: [
         FeaturedBooksSection(),
+        SliverToBoxAdapter(
+          child: Padding(
+            padding: EdgeInsets.all(8.0),
+            child: Text("Newest Books",style: Styles.textStyle20,),
+          ),
+        ),
         NewestBooksSection()
       ],
     );

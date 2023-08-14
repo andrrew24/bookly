@@ -8,11 +8,14 @@ class FeaturedBooksSection extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return SliverList(delegate: SliverChildListDelegate([
-      const Column(
-        children: [
-          CustomAppBar(),
-          FeaturedItemList(),
-        ],
+     const Padding(
+        padding:  EdgeInsets.all(8.0),
+        child:  Column(
+          children: [
+            CustomAppBar(),
+            FeaturedItemList(),
+          ],
+        ),
       ),
     ]));
   }
