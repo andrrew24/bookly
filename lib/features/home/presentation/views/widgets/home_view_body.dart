@@ -1,4 +1,5 @@
 import 'package:bookly/core/utils/styles.dart';
+import 'package:bookly/features/home/presentation/views/widgets/newest_books_section.dart';
 import 'package:flutter/material.dart';
 
 import 'featured_books_section.dart';
@@ -16,7 +17,8 @@ class HomeViewBody extends StatelessWidget {
     return const CustomScrollView(
       physics: BouncingScrollPhysics(),
       slivers: [
-        FeaturedBooksSection()
+        FeaturedBooksSection(),
+        NewestBooksSection()
       ],
     );
   }
