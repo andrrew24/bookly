@@ -15,15 +15,29 @@ class HomeAppBar extends StatelessWidget {
         mainAxisAlignment: MainAxisAlignment.spaceBetween,
         children: [
           SizedBox(height: 20, child: Image.asset(Assets.imagesLogo)),
-          IconButton(
-              onPressed: () {
-                GoRouter.of(context).push(AppRouter.kSearchView);
-              },
-              icon: const Icon(
-                FontAwesomeIcons.magnifyingGlass,
-                size: 20,
-                color: Colors.white,
-              )),
+          Row(
+            children: [
+              IconButton(
+                  onPressed: () {
+                    GoRouter.of(context).push(AppRouter.kSearchView);
+                  },
+                  icon: const Icon(
+                    FontAwesomeIcons.magnifyingGlass,
+                    size: 20,
+                    color: Colors.white,
+                  )),
+                  IconButton(
+                  onPressed: () {
+                    GoRouter.of(context).push(AppRouter.kCartView);
+                  },
+                  icon: const Icon(
+                    FontAwesomeIcons.cartShopping,
+                    size: 20,
+                    color: Colors.white,
+                  )),
+            ],
+          ),
+
         ],
       ),
     );
