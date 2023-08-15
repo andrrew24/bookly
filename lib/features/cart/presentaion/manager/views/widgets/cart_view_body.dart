@@ -1,5 +1,4 @@
 import 'package:bookly/features/cart/presentaion/manager/cart_cubit/cart_cubit.dart';
-import 'package:bookly/features/home/presentation/views/widgets/book_item.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
@@ -25,6 +24,9 @@ class CartViewBody extends StatelessWidget {
             trailOnPressed: () =>
                 BlocProvider.of<CartCubit>(context).books.clear(),
           ),
+        ),
+       const SizedBox(
+          height: 25,
         ),
        const CartBooksList(),
       ],

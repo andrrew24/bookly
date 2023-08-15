@@ -29,7 +29,7 @@ class BookDetailsViewBody extends StatelessWidget {
                     child: CustomAppBar(
                       leadIcon: const Icon(FontAwesomeIcons.xmark),
                       leadOnPressed: () => GoRouter.of(context).pushReplacement(AppRouter.kHomeView),
-                      trailIcon: const Icon(FontAwesomeIcons.cartFlatbed),
+                      trailIcon: const Icon(FontAwesomeIcons.cartShopping),
                       trailOnPressed: () => GoRouter.of(context).push(AppRouter.kCartView),
                     ),
                   ),
