@@ -4,7 +4,7 @@ import 'package:bookly/features/home/presentation/views/widgets/newest_books_lis
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 
-import 'custom_vertical_books_list.dart';
+import '../../../../../core/utils/widgets/custom_vertical_books_list.dart';
 
 class NewestBooksSection extends StatelessWidget {
   const NewestBooksSection({super.key});

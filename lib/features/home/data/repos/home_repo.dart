@@ -1,5 +1,5 @@
 import 'package:bookly/core/errors/failure.dart';
-import 'package:bookly/core/book_model/book_model.dart';
+import 'package:bookly/core/data/book_model/book_model.dart';
 import 'package:either_dart/either.dart';
 
 abstract class HomeRepo {

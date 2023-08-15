@@ -2,7 +2,7 @@
 
 import 'package:bookly/core/utils/styles.dart';
 import 'package:bookly/core/utils/widgets/custom_error_wid.dart';
-import 'package:bookly/features/home/presentation/views/widgets/custom_vertical_books_list.dart';
+import 'package:bookly/core/utils/widgets/custom_vertical_books_list.dart';
 import 'package:bookly/features/search/presentaion/manager/search_cubit/search_cubit.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';

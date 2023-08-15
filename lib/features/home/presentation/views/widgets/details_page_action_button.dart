@@ -1,8 +1,10 @@
 import 'package:bookly/core/utils/functions/launch_url.dart';
 import 'package:bookly/core/utils/styles.dart';
 import 'package:bookly/core/utils/widgets/custom_button.dart';
-import 'package:bookly/core/book_model/book_model.dart';
+import 'package:bookly/core/data/book_model/book_model.dart';
 import 'package:flutter/material.dart';
+
+import '../../../methods/get_text.dart';
 
 class DetailsPageActionButton extends StatelessWidget {
   const DetailsPageActionButton({
@@ -29,7 +31,6 @@ class DetailsPageActionButton extends StatelessWidget {
         ),
         CustomButton(
           onTap: () {
-            print("aaaaaaaa");
             launchTheUrl(context, bookModel.volumeInfo.previewLink);
           },
           text: getText(bookModel),
@@ -44,10 +45,4 @@ class DetailsPageActionButton extends StatelessWidget {
   }
 }
 
-String getText(BookModel bookModel) {
-  if (bookModel.volumeInfo.previewLink == null) {
-    return "Not Available";
-  } else {
-    return "Preview";
-  }
-}
+

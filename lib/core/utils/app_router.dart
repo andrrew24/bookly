@@ -1,5 +1,6 @@
 import 'package:bookly/core/utils/service_locator.dart';
-import 'package:bookly/core/book_model/book_model.dart';
+import 'package:bookly/core/data/book_model/book_model.dart';
+import 'package:bookly/features/cart/presentaion/manager/views/cart_view.dart';
 import 'package:bookly/features/home/data/repos/home_repo_impl.dart';
 import 'package:bookly/features/home/presentation/views/book_details_view.dart';
 import 'package:bookly/features/home/presentation/views/home_view.dart';
@@ -16,6 +17,7 @@ abstract class AppRouter {
   static const kHomeView = "/homeView";
   static const kBookDetailsView = "/bookDetailsView";
   static const kSearchView = "/searchView";
+  static const kCartView = "/cartView";
 
   static final router = GoRouter(
     routes: <RouteBase>[
@@ -23,6 +25,12 @@ abstract class AppRouter {
         path: '/',
         builder: (context, GoRouterState state) {
           return const SplashView();
+        },
+      ),
+      GoRoute(
+        path: kCartView,
+        builder: (context, GoRouterState state) {
+          return const CartView();
         },
       ),
       GoRoute(
