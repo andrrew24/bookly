@@ -1,7 +1,10 @@
 import 'package:bookly/core/data/book_model/book_model.dart';
+import 'package:bookly/core/utils/app_router.dart';
 import 'package:flutter/material.dart';
+import 'package:font_awesome_flutter/font_awesome_flutter.dart';
+import 'package:go_router/go_router.dart';
 import 'book_details_section.dart';
-import 'custom_app_bar_book_details.dart';
+import '../../../../../core/utils/widgets/custom_app_bar_book_details.dart';
 import 'similar_books_section.dart';
 
 class BookDetailsViewBody extends StatelessWidget {
@@ -11,7 +14,7 @@ class BookDetailsViewBody extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return  SafeArea(
+    return SafeArea(
       child: Scaffold(
         body: CustomScrollView(
           physics: const BouncingScrollPhysics(),
@@ -21,9 +24,14 @@ class BookDetailsViewBody extends StatelessWidget {
               child: Column(
                 crossAxisAlignment: CrossAxisAlignment.center,
                 children: [
-                  const Padding(
-                    padding: EdgeInsets.symmetric(horizontal: 20),
-                    child: CustomAppBarBookDetails(),
+                   Padding(
+                    padding: const EdgeInsets.symmetric(horizontal: 20),
+                    child: CustomAppBar(
+                      leadIcon: const Icon(FontAwesomeIcons.xmark),
+                      leadOnPressed: () => GoRouter.of(context).pushReplacement(AppRouter.kHomeView),
+                      trailIcon: const Icon(FontAwesomeIcons.cartFlatbed),
+                      trailOnPressed: () => GoRouter.of(context).push(AppRouter.kCartView),
+                    ),
                   ),
                   BookDetailsSection(
                     bookModel: bookModel,
