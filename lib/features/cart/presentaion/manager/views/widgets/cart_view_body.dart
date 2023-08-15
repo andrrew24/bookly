@@ -1,9 +1,11 @@
+import 'package:bookly/features/cart/presentaion/manager/cart_cubit/cart_cubit.dart';
+import 'package:bookly/features/home/presentation/views/widgets/book_item.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'package:go_router/go_router.dart';
-
-import '../../../../../../core/utils/app_router.dart';
 import '../../../../../../core/utils/widgets/custom_app_bar_book_details.dart';
+import 'cart_books_list.dart';
 
 class CartViewBody extends StatelessWidget {
   const CartViewBody({
@@ -15,17 +17,19 @@ class CartViewBody extends StatelessWidget {
     return Column(
       children: [
         Padding(
-          padding: const EdgeInsets.symmetric(horizontal:20),
+          padding: const EdgeInsets.symmetric(horizontal: 20),
           child: CustomAppBar(
             leadIcon: const Icon(FontAwesomeIcons.xmark),
             leadOnPressed: () => GoRouter.of(context).pop(),
-            trailIcon: const Icon(FontAwesomeIcons.cartFlatbed),
+            trailIcon: const Icon(FontAwesomeIcons.trash),
             trailOnPressed: () =>
-                GoRouter.of(context).push(AppRouter.kCartView),
+                BlocProvider.of<CartCubit>(context).books.clear(),
           ),
-        )
-        
+        ),
+       const CartBooksList(),
       ],
     );
   }
 }
+
+
