@@ -10,9 +10,9 @@ abstract class Styles {
     fontSize: 20,
     fontWeight: FontWeight.normal,
   );
-  static const textStyle30 = TextStyle(
+  static const textStyle25 = TextStyle(
     fontFamily: kfontFamily,
-    fontSize: 30,
+    fontSize: 25,
     fontWeight: FontWeight.w900,
     letterSpacing: 1.2,
   );

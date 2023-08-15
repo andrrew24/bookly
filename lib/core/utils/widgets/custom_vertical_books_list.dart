@@ -17,7 +17,7 @@ class CustomVerticalBooksList extends StatelessWidget {
       childCount: listCount,
       (context, index) {
         return Padding(
-          padding: const EdgeInsets.only(left: 5),
+          padding: const EdgeInsets.only(left: 10),
           child: BookItemWidget(bookModel: books[index]),
         );
       },
