@@ -8,5 +8,4 @@ class CartCubit extends Cubit<CartState> {
   CartCubit() : super(CartInitial());
 
   final List<BookModel> books = [];
-
 }

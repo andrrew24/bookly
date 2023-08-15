@@ -1,6 +1,7 @@
 import 'package:bookly/core/utils/constants.dart';
 import 'package:bookly/core/utils/app_router.dart';
 import 'package:bookly/core/utils/service_locator.dart';
+import 'package:bookly/features/cart/presentaion/manager/cart_cubit/cart_cubit.dart';
 import 'package:bookly/features/home/data/repos/home_repo_impl.dart';
 import 'package:bookly/features/home/presentation/manager/featured_books_cubit/featured_books_cubit.dart';
 import 'package:bookly/features/home/presentation/manager/simble_bloc_observer.dart';
@@ -33,7 +34,10 @@ class BooklyApp extends StatelessWidget {
           create: (context) => NewestBooksCubit(
             getIt.get<HomeRepoImp>(),
           )..getNewestBooks(),
-        )
+        ),
+        BlocProvider(
+          create: (context) => CartCubit()
+        ),
       ],
       child: MaterialApp.router(
         routerConfig: AppRouter.router,
