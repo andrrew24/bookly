@@ -1,5 +1,8 @@
 import 'package:flutter/material.dart';
+import 'package:font_awesome_flutter/font_awesome_flutter.dart';
+import 'package:go_router/go_router.dart';
 
+import '../../../../../../core/utils/app_router.dart';
 import '../../../../../../core/utils/widgets/custom_app_bar_book_details.dart';
 
 class CartViewBody extends StatelessWidget {
@@ -11,7 +14,17 @@ class CartViewBody extends StatelessWidget {
   Widget build(BuildContext context) {
     return Column(
       children: [
-        CustomAppBar()
+        Padding(
+          padding: const EdgeInsets.symmetric(horizontal:20),
+          child: CustomAppBar(
+            leadIcon: const Icon(FontAwesomeIcons.xmark),
+            leadOnPressed: () => GoRouter.of(context).pop(),
+            trailIcon: const Icon(FontAwesomeIcons.cartFlatbed),
+            trailOnPressed: () =>
+                GoRouter.of(context).push(AppRouter.kCartView),
+          ),
+        )
+        
       ],
     );
   }
