@@ -1,3 +1,4 @@
+import 'package:bookly/core/utils/widgets/custom_error_wid.dart';
 import 'package:bookly/features/cart/presentaion/manager/cart_cubit/cart_cubit.dart';
 import 'package:bookly/features/home/presentation/views/widgets/book_item.dart';
 import 'package:flutter/material.dart';
@@ -20,24 +21,22 @@ class _CartBooksListState extends State<CartBooksList> {
             padding: const EdgeInsets.only(left: 15),
             child: BlocBuilder<CartCubit, CartState>(
               builder: (context, state) {
-             if (state is CartUpdated){
+                if (state is CartLoaded) {
                   return ListView.builder(
                     itemCount: state.books.length,
                     itemBuilder: (context, index) {
-                      return BookItemWidget(
-                          bookModel:
-                              state.books[index]);
+                      return BookItemWidget(bookModel: state.books[(state.books.length - 1) - index]);
                     },
                   );
-                }else{
+                } else if (state is CartClearBooks) {
                   return ListView.builder(
-                    itemCount: BlocProvider.of<CartCubit>(context).books.length,
+                    itemCount: state.books.length,
                     itemBuilder: (context, index) {
-                      return BookItemWidget(
-                          bookModel:
-                              BlocProvider.of<CartCubit>(context).books[index]);
+                      return BookItemWidget(bookModel: state.books[(state.books.length - 1) - index]);
                     },
                   );
+                } else {
+                  return const CustomErrorWid(text: "List is Empty");
                 }
               },
             )));
