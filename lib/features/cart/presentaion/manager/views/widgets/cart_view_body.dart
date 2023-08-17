@@ -22,7 +22,7 @@ class CartViewBody extends StatelessWidget {
             leadOnPressed: () => GoRouter.of(context).pop(),
             trailIcon: const Icon(FontAwesomeIcons.trash),
             trailOnPressed: () =>
-                BlocProvider.of<CartCubit>(context).books.clear(),
+                BlocProvider.of<CartCubit>(context).clearBooks(),
           ),
         ),
        const SizedBox(

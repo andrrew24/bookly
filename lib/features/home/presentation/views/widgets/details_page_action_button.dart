@@ -1,11 +1,7 @@
-import 'package:bookly/core/utils/functions/launch_url.dart';
 import 'package:bookly/core/utils/styles.dart';
 import 'package:bookly/core/utils/widgets/custom_button.dart';
 import 'package:bookly/core/data/book_model/book_model.dart';
-import 'package:bookly/features/cart/presentaion/manager/cart_cubit/cart_cubit.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter_bloc/flutter_bloc.dart';
-
 import '../../../methods/get_text.dart';
 
 class DetailsPageActionButton extends StatelessWidget {
@@ -22,30 +18,32 @@ class DetailsPageActionButton extends StatelessWidget {
       mainAxisAlignment: MainAxisAlignment.center,
       children: [
         CustomButton(
-          onTap: () {
-            if (!(BlocProvider.of<CartCubit>(context).books.contains(bookModel))) {
-              BlocProvider.of<CartCubit>(context).books.add(bookModel);
-            }
-          },
+          onPressed: () {},
           text: "Add To Cart",
-          borderRadiusGeometry: const BorderRadius.only(
-              topLeft: Radius.circular(16), bottomLeft: Radius.circular(16)),
-          color: const Color.fromARGB(255, 255, 255, 255),
-          textStyle: Styles.textStyle18.copyWith(
-            color: Colors.black,
+          color: Colors.white,
+          shape: const MaterialStatePropertyAll(
+            RoundedRectangleBorder(
+              borderRadius: BorderRadius.only(
+                topLeft: Radius.circular(16),
+                bottomLeft: Radius.circular(16)
+              ),
+            ),
           ),
         ),
         CustomButton(
-          onTap: () {
-            launchTheUrl(context, bookModel.volumeInfo.previewLink);
-          },
+          onPressed: () {},
           text: getText(bookModel),
-          borderRadiusGeometry: const BorderRadius.only(
-              topRight: Radius.circular(16), bottomRight: Radius.circular(16)),
-          color: const Color(0xffED8161),
-          textStyle: Styles.textStyle16
-              .copyWith(color: Colors.white, fontWeight: FontWeight.bold),
-        )
+          color: Colors.red,
+          textStyle: Styles.textStyle18.copyWith(color: Colors.white),
+          shape: const MaterialStatePropertyAll(
+            RoundedRectangleBorder(
+              borderRadius: BorderRadius.only(
+                topRight: Radius.circular(16),
+                bottomRight: Radius.circular(16)
+              ),
+            ),
+          ),
+        ),
       ],
     );
   }

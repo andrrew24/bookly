@@ -8,4 +8,19 @@ class CartCubit extends Cubit<CartState> {
   CartCubit() : super(CartInitial());
 
   final List<BookModel> books = [];
+
+  void clearBooks() {
+    books.clear();
+    emit(CartUpdated(books));
+  }
+
+  void addBook(BookModel book) {
+    books.add(book);
+    emit(CartUpdated(books));
+  }
+
+  void deleteBook(BookModel book) {
+    books.remove(book);
+    emit(CartUpdated(books));
+  }
 }
