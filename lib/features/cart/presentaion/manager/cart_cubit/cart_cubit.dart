@@ -14,12 +14,14 @@ class CartCubit extends Cubit<CartState> {
     emit(CartClearBooks(books));
   }
 
-  void addBook(BookModel book) {
-    books.add(book);
+  void deleteBook(BookModel book) {
+    books.remove(book);
+    emit(CartClearBooks(books));
     emit(CartLoaded(books));
   }
 
-  void deleteBook(BookModel book) {
-    books.remove(book);
+  void addBook(BookModel book) {
+    books.add(book);
+    emit(CartLoaded(books));
   }
 }

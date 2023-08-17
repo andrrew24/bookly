@@ -1,8 +1,9 @@
 import 'package:bookly/core/utils/widgets/custom_error_wid.dart';
 import 'package:bookly/features/cart/presentaion/manager/cart_cubit/cart_cubit.dart';
-import 'package:bookly/features/home/presentation/views/widgets/book_item.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
+
+import 'slidabel_book_item.dart';
 
 class CartBooksList extends StatefulWidget {
   const CartBooksList({
@@ -25,23 +26,28 @@ class _CartBooksListState extends State<CartBooksList> {
                   return ListView.builder(
                     itemCount: state.books.length,
                     itemBuilder: (context, index) {
-                      return BookItemWidget(bookModel: state.books[(state.books.length - 1) - index]);
+                      return  SlidableBookItem(
+                        bookModel: state.books[(state.books.length - 1) - index],
+                      );
                     },
                   );
                 } else if (state is CartClearBooks) {
                   return ListView.builder(
                     itemCount: state.books.length,
                     itemBuilder: (context, index) {
-                      return BookItemWidget(bookModel: state.books[(state.books.length - 1) - index]);
+                      return SlidableBookItem(
+                        bookModel: state.books[(state.books.length - 1) - index],
+                      );
                     },
                   );
                 } else {
-                  return const CustomErrorWid(text: "List is Empty");
+                  return const Center(child:  CustomErrorWid(text: "Add Your Favorite Books Here ♥"));
                 }
               },
             )));
   }
 }
+
 
 
 // BlocBuilder<CartCubit, CartState>(builder: (context, state) {
