@@ -9,5 +9,4 @@ const kNewestEndPoint =
 
 const kFeaturedEndPoint = "volumes?q=computer science";
 
-const kDefaultImageLink =
-    "https://img.icons8.com/?size=512&id=bwUgs69v7bOd&format=png";
+

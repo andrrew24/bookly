@@ -22,7 +22,7 @@ class CustomButton extends StatelessWidget {
         style: ButtonStyle(
             backgroundColor: MaterialStatePropertyAll(color),
             padding:
-                MaterialStatePropertyAll(EdgeInsets.symmetric(horizontal: 25,vertical: 15)),
+                const MaterialStatePropertyAll(EdgeInsets.symmetric(horizontal: 25,vertical: 15)),
             shape: shape),
         child: Center(
             child: Text(
@@ -32,18 +32,3 @@ class CustomButton extends StatelessWidget {
   }
 }
 
-// GestureDetector(
-//       onTap: onTap,
-//       child: Container(
-//         padding: const EdgeInsets.symmetric(horizontal: 20),
-//         height: 50,
-//         width: 160,
-//         decoration:
-//             BoxDecoration(color: color, borderRadius: borderRadiusGeometry),
-//         child: Center(
-//             child: Text(
-//           text,
-//           style: textStyle ?? Styles.textStyle18.copyWith(color: Colors.black),
-//         )),
-//       ),
-//     );

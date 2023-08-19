@@ -1,4 +1,3 @@
-import 'package:bookly/core/utils/constants.dart';
 import 'package:bookly/core/utils/app_router.dart';
 import 'package:bookly/core/utils/widgets/custom_error_wid.dart';
 import 'package:flutter/material.dart';
@@ -33,7 +32,7 @@ class SimilarBooksList extends StatelessWidget {
                     GoRouter.of(context).push(AppRouter.kBookDetailsView,extra:state.books[index]);
                   },
                   child: CustomBookImage(
-                    imageUrl: state.books[index].volumeInfo.imageLinks?.thumbnail ?? kDefaultImageLink,
+                    imageUrl: state.books[index].volumeInfo.imageLinks?.thumbnail ?? " ",
                   ),
                 );
               },

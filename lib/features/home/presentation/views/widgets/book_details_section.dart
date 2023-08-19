@@ -1,4 +1,3 @@
-import 'package:bookly/core/utils/constants.dart';
 import 'package:bookly/core/utils/styles.dart';
 import 'package:bookly/core/data/book_model/book_model.dart';
 import 'package:flutter/material.dart';
@@ -21,7 +20,7 @@ class BookDetailsSection extends StatelessWidget {
           padding: EdgeInsets.symmetric(horizontal: width.width * .24),
           child: CustomBookImage(
             imageUrl:
-                bookModel.volumeInfo.imageLinks?.thumbnail ?? kDefaultImageLink,
+                bookModel.volumeInfo.imageLinks?.thumbnail ?? " ",
           ),
         ),
         Text(
