@@ -45,16 +45,3 @@ class CartBooksList extends StatelessWidget {
 }
 
 
-
-// BlocBuilder<CartCubit, CartState>(builder: (context, state) {
-      //   if (state is CartUpdated) {
-      //     return ListView.builder(
-      //       itemCount: state.books.length,
-      //       itemBuilder: (context, index) {
-      //         return BookItemWidget(bookModel: state.books[index]);
-      //       },
-      //     );
-      //   } else {
-      //     return const CustomErrorWid(text: "Add Your Favorite Books Here ♥");
-      //   }
-      // }),
