@@ -11,12 +11,9 @@ sealed class CartState extends Equatable {
 
 final class CartInitial extends CartState {}
 
-final class CartClearBooks extends CartState {
-  final List<BookModel> books;
-  CartClearBooks(this.books);
-}
+final class CartUpdating extends CartState {}
 
-final class CartLoaded extends CartState {
+final class CartUpdated extends CartState {
   final List<BookModel> books;
-  CartLoaded(this.books);
+  CartUpdated(this.books);
 }

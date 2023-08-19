@@ -5,16 +5,12 @@ import 'package:flutter_bloc/flutter_bloc.dart';
 
 import 'slidabel_book_item.dart';
 
-class CartBooksList extends StatefulWidget {
+class CartBooksList extends StatelessWidget {
   const CartBooksList({
     super.key,
   });
 
-  @override
-  State<CartBooksList> createState() => _CartBooksListState();
-}
 
-class _CartBooksListState extends State<CartBooksList> {
   @override
   Widget build(BuildContext context) {
     return Expanded(
@@ -22,26 +18,26 @@ class _CartBooksListState extends State<CartBooksList> {
             padding: const EdgeInsets.only(left: 15),
             child: BlocBuilder<CartCubit, CartState>(
               builder: (context, state) {
-                if (state is CartLoaded) {
-                  return ListView.builder(
-                    itemCount: state.books.length,
-                    itemBuilder: (context, index) {
-                      return  SlidableBookItem(
-                        bookModel: state.books[(state.books.length - 1) - index],
-                      );
-                    },
-                  );
-                } else if (state is CartClearBooks) {
-                  return ListView.builder(
-                    itemCount: state.books.length,
-                    itemBuilder: (context, index) {
-                      return SlidableBookItem(
-                        bookModel: state.books[(state.books.length - 1) - index],
-                      );
-                    },
-                  );
+                if (state is CartUpdated) {
+                  if (state.books.isNotEmpty) {
+                    return ListView.builder(
+                      itemCount: state.books.length,
+                      itemBuilder: (context, index) {
+                        return SlidableBookItem(
+                          bookModel:
+                              state.books[(state.books.length - 1) - index],
+                        );
+                      },
+                    );
+                  } else {
+                    return const Center(
+                        child: CustomErrorWid(
+                            text: "The List is Empty"));
+                  }
                 } else {
-                  return const Center(child:  CustomErrorWid(text: "Add Your Favorite Books Here ♥"));
+                  return const Center(
+                      child: CustomErrorWid(
+                          text: "Add Your Favorite Books Here ♥"));
                 }
               },
             )));
