@@ -2,9 +2,9 @@ import 'package:bookly/core/utils/functions/launch_url.dart';
 import 'package:bookly/core/utils/styles.dart';
 import 'package:bookly/core/utils/widgets/custom_button.dart';
 import 'package:bookly/core/data/book_model/book_model.dart';
-import 'package:bookly/features/cart/presentaion/manager/cart_cubit/cart_cubit.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
+import '../../../../cart/manager/cart_cubit/cart_cubit.dart';
 import '../../../methods/get_text.dart';
 
 class DetailsPageActionButton extends StatelessWidget {

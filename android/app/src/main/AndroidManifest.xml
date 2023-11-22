@@ -11,7 +11,7 @@
 </queries>
     <application
         android:usesCleartextTraffic="true"
-        android:label="bookly"
+        android:label="BOOKLY"
         android:name="${applicationName}"
         android:icon="@mipmap/launcher_icon">
         <activity
